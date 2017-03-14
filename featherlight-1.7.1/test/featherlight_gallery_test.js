@@ -54,7 +54,7 @@ var expect = chai.expect;
     it ('will keep modified background intact', function(done) {
       $('#basic-test a').featherlightGallery({
         afterOpen: function() {
-          this.$instance.find('.featherlight-content').append('<div class="something">');
+          this.$instance.find('.featherlight-content').append('<div class="something"/>');
          }
       });
       $('#basic-test a').eq(2).click();
@@ -101,9 +101,9 @@ var expect = chai.expect;
     describe('$.featherlightGallery', function() {
       it ('can be called directly', function(done) {
         var lastCurrent = null;
-        var imgs =  '<img src="fixtures/photo.jpeg?direct_1">' +
-                    '<img src="fixtures/photo.jpeg?direct_2">' +
-                    '<img src="fixtures/photo.jpeg?direct_3">';
+        var imgs =  '<img src="fixtures/photo.jpeg?direct_1"/>' +
+                    '<img src="fixtures/photo.jpeg?direct_2"/>' +
+                    '<img src="fixtures/photo.jpeg?direct_3"/>';
         $.featherlightGallery($(imgs), {
           targetAttr: 'src',
           afterContent: function(){ lastCurrent = this.$currentTarget }
@@ -119,9 +119,9 @@ var expect = chai.expect;
 
     describe('$.featherlightGallery', function() {
       it ('does not get confused with same images', function(done) {
-        var imgs =  '<img src="fixtures/photo.jpeg">' +
-                    '<img src="fixtures/photo.jpeg">' +
-                    '<img src="fixtures/photo.jpeg?direct_3">';
+        var imgs =  '<img src="fixtures/photo.jpeg"/>' +
+                    '<img src="fixtures/photo.jpeg"/>' +
+                    '<img src="fixtures/photo.jpeg?direct_3"/>';
         $.featherlightGallery($(imgs), { targetAttr: 'src' });
         $.fx.off = false
         patiently(done, [function(){
@@ -168,7 +168,7 @@ var expect = chai.expect;
           lastCallback = cb;
         }
       });
-      $.featherlightGallery($('<img src="fixtures/photo.jpeg?direct_1">'), options);
+      $.featherlightGallery($('<img src="fixtures/photo.jpeg?direct_1"/>'), options);
       patiently(done, [function(){
         expect(lastCallback).to.equal('afterOpen');
         $.featherlight.current().close();
@@ -201,11 +201,10 @@ var expect = chai.expect;
 
     describe('.current', function() {
       it ('only returns actual featherlight gallery instances', function() {
-        $.featherlight('<p>This is a test</p><p>');
+        $.featherlight('<p>This is a test<p>');
         expect($.featherlight.current()).to.not.be.null;
         expect($.featherlightGallery.current()).to.be.null;
       });
     });
   });
 }(jQuery));
-</p></div>

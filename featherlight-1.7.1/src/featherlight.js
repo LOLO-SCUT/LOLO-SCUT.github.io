@@ -366,7 +366,7 @@
 					var self = this,
 						deferred = $.Deferred(),
 						img = new Image(),
-						$img = $('<img src="'+url+'" alt="" class="'+self.namespace+'-image">');
+						$img = $('<img src="'+url+'" alt="" class="'+self.namespace+'-image" />');
 					img.onload  = function() {
 						/* Store naturalWidth & height for IE8 */
 						$img.naturalWidth = img.width; $img.naturalHeight = img.height;
@@ -399,7 +399,7 @@
 			iframe: {
 				process: function(url) {
 					var deferred = new $.Deferred();
-					var $content = $('<iframe>');
+					var $content = $('<iframe/>');
 					var css = parseAttrs(this, 'iframe');
 					var attrs = slice(css, iFrameAttributeSet);
 					$content.hide()
@@ -613,4 +613,3 @@
 	/* bind featherlight on ready if config autoBind is set */
 	$(document).ready(function(){ Featherlight._onReady(); });
 }(jQuery));
-</div></iframe></iframe></[\w!][^<]*>

@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 	// Project configuration
-	var banner = '/**\n * Featherlight - ultra slim jQuery lightbox\n * Version <%= pkg.version="" %=""> - <%= pkg.homepage="" %="">\n *\n * Copyright <%= grunt.template.today("yyyy")="" %="">, <%= pkg.author.name="" %=""> (<%= pkg.author.url="" %="">)\n * MIT Licensed.\n**/';
-	var gallery = '/**\n * Featherlight Gallery – an extension for the ultra slim jQuery lightbox\n * Version <%= pkg.version="" %=""> - <%= pkg.homepage="" %="">\n *\n * Copyright <%= grunt.template.today("yyyy")="" %="">, <%= pkg.author.name="" %=""> (<%= pkg.author.url="" %="">)\n * MIT Licensed.\n**/';
+	var banner = '/**\n * Featherlight - ultra slim jQuery lightbox\n * Version <%= pkg.version %> - <%= pkg.homepage %>\n *\n * Copyright <%= grunt.template.today("yyyy") %>, <%= pkg.author.name %> (<%= pkg.author.url %>)\n * MIT Licensed.\n**/';
+	var gallery = '/**\n * Featherlight Gallery – an extension for the ultra slim jQuery lightbox\n * Version <%= pkg.version %> - <%= pkg.homepage %>\n *\n * Copyright <%= grunt.template.today("yyyy") %>, <%= pkg.author.name %> (<%= pkg.author.url %>)\n * MIT Licensed.\n**/';
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
@@ -9,15 +9,15 @@ module.exports = function(grunt) {
 				options: {
 					banner: banner+'\n'
 				},
-				src: 'src/<%= pkg.name="" %="">.js',
-				dest: 'release/<%= pkg.name="" %="">.min.js'
+				src: 'src/<%= pkg.name %>.js',
+				dest: 'release/<%= pkg.name %>.min.js'
 			},
 			gallery: {
 				options: {
 					banner: gallery
 				},
-				src: 'src/<%= pkg.name="" %="">.gallery.js',
-				dest: 'release/<%= pkg.name="" %="">.gallery.min.js'
+				src: 'src/<%= pkg.name %>.gallery.js',
+				dest: 'release/<%= pkg.name %>.gallery.min.js'
 			}
 		},
 		jshint: {
@@ -44,25 +44,25 @@ module.exports = function(grunt) {
 				options: {
 					banner: banner
 				},
-				src: 'src/<%= pkg.name="" %="">.css',
-				dest: 'release/<%= pkg.name="" %="">.min.css'
+				src: 'src/<%= pkg.name %>.css',
+				dest: 'release/<%= pkg.name %>.min.css'
 			},
 			gallery: {
 				options: {
 					banner: gallery
 				},
-				src: 'src/<%= pkg.name="" %="">.gallery.css',
-				dest: 'release/<%= pkg.name="" %="">.gallery.min.css'
+				src: 'src/<%= pkg.name %>.gallery.css',
+				dest: 'release/<%= pkg.name %>.gallery.min.css'
 			}
 		},
 		jquerymanifest: {
 			options: {
 				source: grunt.file.readJSON('package.json'),
 				overrides: {
-					"name": "<%= pkg.name="" %="">",
-					"version": "<%= pkg.version="" %="">",
-					"title": "<%= pkg.title="" %="">",
-					"description": "<%= pkg.description="" %="">",
+					"name": "<%= pkg.name %>",
+					"version": "<%= pkg.version %>",
+					"title": "<%= pkg.title %>",
+					"description": "<%= pkg.description %>",
 					"dependencies": {
 						"jquery": ">=1.7"
 					},
@@ -78,31 +78,31 @@ module.exports = function(grunt) {
 				replacements: [
 					{
 						from: /Copyright\s[0-9]{4}/g,
-						to: 'Copyright <%= grunt.template.today("yyyy")="" %="">'
+						to: 'Copyright <%= grunt.template.today("yyyy") %>'
 					},
 					{
 						from: /\*\sVersion\s[0-9]+[.]{1}[0-9]+[.]{1}[0-9]+/g,
-						to: '* Version <%= pkg.version="" %="">'
+						to: '* Version <%= pkg.version %>'
 					},
 					{
 						from: /Current\sRelease\s[0-9]+[.]{1}[0-9]+[.]{1}[0-9]+/g,
-						to: 'Current Release <%= pkg.version="" %="">'
+						to: 'Current Release <%= pkg.version %>'
 					},
 					{
 						from: /archive\/[0-9]+[.]{1}[0-9]+[.]{1}[0-9]+/g,
-						to: 'archive/<%= pkg.version="" %="">'
+						to: 'archive/<%= pkg.version %>'
 					},
 					{
 						from: /noelboss\/featherlight\/[0-9]+[.]{1}[0-9]+[.]{1}[0-9]+/g,
-						to: 'noelboss/featherlight/<%= pkg.version="" %="">'
+						to: 'noelboss/featherlight/<%= pkg.version %>'
 					},
 					{
 						from: /"version": "[0-9]+[.]{1}[0-9]+[.]{1}[0-9]+"/g,
-						to: '"version": "<%= pkg.version="" %="">"'
+						to: '"version": "<%= pkg.version %>"'
 					},
 					{
 						from: /\([0-9]+[.]{1}[0-9]+[.]{1}[0-9]+\)/g,
-						to: '(<%= pkg.version="" %="">)'
+						to: '(<%= pkg.version %>)'
 					}
 				]
 			},
@@ -128,7 +128,7 @@ module.exports = function(grunt) {
 					},
 					{
 						from: 'master.zip',
-						to: '<%= pkg.version="" %="">.zip'
+						to: '<%= pkg.version %>.zip'
 					}
 				]
 			},
@@ -138,7 +138,7 @@ module.exports = function(grunt) {
 				replacements: [
 					{
 						from: 'Master\n-----------------------------------',
-						to: 'Master\n-----------------------------------\n\n\n<%= pkg.version="" %=""> - <%= grunt.template.today("yyyy-mm-dd")="" %="">\n-----------------------------------'
+						to: 'Master\n-----------------------------------\n\n\n<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n-----------------------------------'
 					}
 				]
 			},
@@ -189,4 +189,3 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('test',    ['jshint', 'mocha']);
 };
-</%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=></%=>

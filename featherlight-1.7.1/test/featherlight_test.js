@@ -75,7 +75,7 @@ var stubAjaxLoad = function(content) {
 		describe('jQuery.featherlight', function() {
 
 			it('opens a dialog box', function() {
-				$.featherlight('<p class="testing">This is a test</p><p>');
+				$.featherlight('<p class="testing">This is a test<p>');
 				expect($('.featherlight p.testing')).to.be.visible;
 			});
 
@@ -83,7 +83,7 @@ var stubAjaxLoad = function(content) {
 
 		describe('jQuery.featherlight#open', function() {
 			it('returns a promise', function(done) {
-				var fl = new $.featherlight('</p><p class="testing">This is a test</p><p>');
+				var fl = new $.featherlight('<p class="testing">This is a test<p>');
 				expect($.featherlight.current()).to.be.null;
 				var evt = $.Event('dummy');
 				evt.preventDefault();
@@ -97,19 +97,19 @@ var stubAjaxLoad = function(content) {
 			it('returns null if no dialogbox is currently opened', function() {
 				expect($.featherlight.current()).to.be.null;
 				/* even if opened and then closed */
-				$.featherlight('</p><p class="testing">This is a test</p><p>');
+				$.featherlight('<p class="testing">This is a test<p>');
 				$('.featherlight').click();
 				expect($.featherlight.current()).to.be.null;
 				/* even if savagely removed */
-				$.featherlight('</p><p class="testing">This is a test</p><p>');
+				$.featherlight('<p class="testing">This is a test<p>');
 				$('.featherlight').remove();
 				expect($.featherlight.current()).to.be.null;
 			});
 
 			it('returns the featherlight object of the last currently opened dialog', function() {
-				var first = $.featherlight('</p><p>First</p><p>');
+				var first = $.featherlight('<p>First<p>');
 				expect($.featherlight.current()).to.equal(first);
-				var second = $.featherlight('</p><p>Inner</p><p>', {namespace: 'different_namespace'});
+				var second = $.featherlight('<p>Inner<p>', {namespace: 'different_namespace'});
 				expect($.featherlight.current()).to.equal(second);
 				$('.different_namespace').click();
 				expect($.featherlight.current()).to.equal(first);
@@ -121,19 +121,19 @@ var stubAjaxLoad = function(content) {
 			it('returns [] ]if no dialogbox is currently opened', function() {
 				expect($.featherlight.opened()).to.eql([]);
 				/* even if opened and then closed */
-				$.featherlight('</p><p class="testing">This is a test</p><p>');
+				$.featherlight('<p class="testing">This is a test<p>');
 				$('.featherlight').click();
 				expect($.featherlight.opened()).to.eql([]);
 				/* even if savagely removed */
-				$.featherlight('</p><p class="testing">This is a test</p><p>');
+				$.featherlight('<p class="testing">This is a test<p>');
 				$('.featherlight').remove();
 				expect($.featherlight.opened()).to.eql([]);
 			});
 
 			it('returns the featherlight objects of the currently opened dialog', function() {
-				var first = $.featherlight('</p><p>First</p><p>');
+				var first = $.featherlight('<p>First<p>');
 				expect($.featherlight.opened()).to.eql([first]);
-				var second = $.featherlight('</p><p>Inner</p><p>', {namespace: 'different_namespace'});
+				var second = $.featherlight('<p>Inner<p>', {namespace: 'different_namespace'});
 				expect($.featherlight.opened()).to.eql([first, second]);
 				$('.different_namespace').click();
 				expect($.featherlight.opened()).to.eql([first]);
@@ -142,7 +142,7 @@ var stubAjaxLoad = function(content) {
 
 		describe('jQuery.featherlight.close', function() {
 			it('closes the currently opened window, if any', function() {
-				$.featherlight('</p><p class="testing">This is a test</p><p>');
+				$.featherlight('<p class="testing">This is a test<p>');
 				$.featherlight.close();
 				expect($.featherlight.current()).to.be.null;
 				$.featherlight.close(); /* should not create error */
@@ -151,7 +151,7 @@ var stubAjaxLoad = function(content) {
 
 		describe('jQuery.featherlight.close', function() {
 			it('returns a promise', function(done) {
-				$.featherlight('</p><p class="testing">This is a test</p><p>');
+				$.featherlight('<p class="testing">This is a test<p>');
 				$.featherlight.close().then(function(){ done() });
 			});
 		});
@@ -189,10 +189,10 @@ var stubAjaxLoad = function(content) {
 			});
 
 			it('can specify to close or not on escape key', function() {
-				var first = $.featherlight('</p><p>'),
-					second = $.featherlight('</p><p>'),
-					third = $.featherlight('</p><p>', {closeOnEsc: false}),
-					last = $.featherlight('</p><p>', {closeOnEsc: true});
+				var first = $.featherlight('<p/>'),
+					second = $.featherlight('<p/>'),
+					third = $.featherlight('<p/>', {closeOnEsc: false}),
+					last = $.featherlight('<p/>', {closeOnEsc: true});
 				expect($.featherlight._globalHandlerInstalled).to.be.true;
 				triggerEscape();
 				expect($.featherlight.current()).to.equal(third);
@@ -208,7 +208,7 @@ var stubAjaxLoad = function(content) {
 			});
 
 			it('can specify to a close icon', function() {
-				var fl = $.featherlight('</p><p>', {closeIcon: '<div class="test">X</div>'});
+				var fl = $.featherlight('<p/>', {closeIcon: '<div class="test">X</div>'});
 				expect($.featherlight.current()).to.equal(fl);
 				$('.test').click();
 				expect($.featherlight.current()).to.be.null;
@@ -216,7 +216,7 @@ var stubAjaxLoad = function(content) {
 
 			it('can specify a key handler', function() {
 				var lastKeyCode;
-				$.featherlight('</p><p>', {
+				$.featherlight('<p/>', {
 					onKeyUp: function(event) {
 						lastKeyCode = event.keyCode;
 					}
@@ -231,7 +231,7 @@ var stubAjaxLoad = function(content) {
 			it('can specify a resize handler', function() {
 				var resizes = [],
 				  open = function() {
-						$.featherlight('</p><p>', {
+						$.featherlight('<p/>', {
 							onResize: function(event) { resizes.push(this.id); }
 						});
 					}
@@ -248,7 +248,7 @@ var stubAjaxLoad = function(content) {
 
 			it('can specify a filter for events', function() {
 				$("#filter-test .group").featherlight({filter: '.yes', type: 'text'})
-					.append('<span class="yes" href="filter Appended">Photo</span>');
+					.append('<span class="yes"  href="filter Appended">Photo</span>');
 				$("#filter-test span").each(function(){ $(this).click(); });
 				expect($('.featherlight')).with.length(2);
 				expect($('.featherlight:first .featherlight-content')).to.contain('filter Yes');
@@ -352,7 +352,7 @@ var stubAjaxLoad = function(content) {
 			});
 
 			it('can specify to persist the content', function() {
-				var $elem = $('<div class="keepme">').appendTo('body');
+				var $elem = $('<div class="keepme"/>').appendTo('body');
 				expect($('.keepme')).with.length(1).to.have.text('');
 				var fl = $.featherlight({
 					jquery: $elem,
@@ -370,7 +370,7 @@ var stubAjaxLoad = function(content) {
 			var persistTest = function(setting, lastValue) {
 				$('<div class="keepme">Foo</div>').appendTo('body');
 				$('<div class="other">Bar</div>').appendTo('body');
-				var $buttons = $('<a href=".keepme"><a href=".other">').appendTo('body');
+				var $buttons = $('<a href=".keepme"/><a href=".other"/>').appendTo('body');
 				$buttons.featherlight({ persist: setting });
 				$buttons.first().click();
 				$.featherlight.close();
@@ -403,7 +403,8 @@ var stubAjaxLoad = function(content) {
 
 		describe('iframe content filter', function() {
 			it('generates an iframe with the right attributes and css', function(done) {
-				$('<a data-featherlight-iframe="#test-iframe" data-featherlight-iframe-allowfullscreen="true" '+="" 'data-featherlight-iframe-width="323" data-featherlight-iframe-min-height="212">').featherlight().click();
+				$('<a data-featherlight-iframe="#test-iframe" data-featherlight-iframe-allowfullscreen="true" '+
+					'data-featherlight-iframe-width="323" data-featherlight-iframe-min-height="212">').featherlight().click();
 				expect($('.featherlight iframe')).to.have.attr('src').equal('#test-iframe');
 				expect($('.featherlight iframe')).to.have.css('width').equal('323px');
 				expect($('.featherlight iframe')).to.have.css('min-height').equal('212px');
@@ -454,4 +455,3 @@ var stubAjaxLoad = function(content) {
 		});
 	});
 }(jQuery));
-</a></a></a></a></div></div></div></p>
