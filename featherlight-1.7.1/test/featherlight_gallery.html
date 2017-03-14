@@ -10,6 +10,27 @@
 
     <!--Description-->
     
+        <meta name="description" content="Featherlight Gallery Test Suite
+  
+  
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  mocha.setup(&#39;bdd&#39;)
+  
+  
+  
+  
+  
+    if (navigator.userAgent.indexOf(&#39;PhantomJS&#39;) &lt;">
+    
 
     <!--Author-->
     
@@ -40,7 +61,7 @@
 
     <!-- Title -->
     
-    <title>Archiv: 2017 - LOLO-Home</title>
+    <title>LOLO-Home</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -115,9 +136,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -125,31 +144,103 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">2017</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2017/03/14/new/">
-        <span class="archive-date">
-            Mar 2017
-        </span>
-        new
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/featherlight-1.7.1/test/featherlight_gallery.html">
+                Untitled
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-03-14</span>
+            
+            <a href="#disqus_thread" class="comments">Kommentare</a>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Featherlight Gallery Test Suite</title>
+  <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
+  <link rel="stylesheet" href="../src/featherlight.css">
+  <link rel="stylesheet" href="../src/featherlight.gallery.css">
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="../bower_components/jquery/jquery.js"></script>
+  <script src="../bower_components/lodash/lodash.js"></script>
+  <script src="../bower_components/chai/chai.js"></script>
+  <script src="../bower_components/chai-jquery/chai-jquery.js"></script>
+  <script src="../bower_components/chai-properties/chai-properties.js"></script>
+  <script src="../bower_components/mocha/mocha.js"></script>
+  <script>mocha.setup('bdd')</script>
+  <script src="../src/featherlight.js"></script>
+  <script src="../src/featherlight.gallery.js"></script>
+  <script src="helpers/patiently.js"></script>
+  <script src="featherlight_gallery_test.js"></script>
+  <script>
+    if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+      mocha.checkLeaks();
+      mocha.globals(['jQuery*']);
+      mocha.run();
+    }
+  </script>
+  <section id="fixtures">
+    <span id="basic-test">
+      <a href="fixtures/photo_large.jpg?0"><img src="fixtures/photo.jpeg?0"></a>
+      <a href="fixtures/photo_large.jpg?1"><img src="fixtures/photo.jpeg?1"></a>
+      <a href="fixtures/photo_large.jpg?2"><img src="fixtures/photo.jpeg?2"></a>
+      <a href="fixtures/photo_large.jpg?3"><img src="fixtures/photo.jpeg?3"></a>
+    </span>
+
+    <span id="extra-test" data-featherlight-next-icon="}" data-featherlight-after-content="this.called = true" data-featherlight-filter="a">
+      <a href="fixtures/photo_large.jpg?extra_0"><img src="fixtures/photo.jpeg?0"></a>
+      <a href=".some-content"><img src="fixtures/photo.jpeg?1"></a>
+    </span>
+
+    <ul class="some-content">
+      <li>Hello</li>
+      <li>world</li>
+    </ul>
+
+    <div id="full-auto" data-featherlight-gallery="" data-featherlight-filter="a">
+      <a href="fixtures/photo_large.jpg?auto_0"><img src="fixtures/photo.jpeg?auto_0"></a>
+      <a href="fixtures/photo_large.jpg?auto_1"><img src="fixtures/photo.jpeg?auto_1"></a>
+    </div>
+    <div id="just-to-be-sure-auto-bound-galleries-are-independent" data-featherlight-gallery="" data-featherlight-filter="a">
+      <a href="fixtures/photo_large.jpg?auto_2"><img src="fixtures/photo.jpeg?auto_2"></a>
+    </div>
+  </section>
+</body>
+</html>
+
+
+    </div>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/2017/03/14/hello-world/">
-        <span class="archive-date">
-            Mar 2017
-        </span>
-        Hello World
-    </a>
-</div>
-            
         </section>
     </div>
 </div>
