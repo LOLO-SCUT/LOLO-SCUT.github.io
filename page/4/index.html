@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="LOLO-Home"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="LOLO-Home"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>page - LOLO-Home</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    主页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    目录
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于我（暂无）
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系我
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">LOLO-Home</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2016/03/16/JS switch语句&break和continue语句/">
+                JS switch语句&break和continue语句
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-03-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JS简览/">JS简览</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>1、switch语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;p&gt;点击一下，看看今天是周几吖！&lt;/p&gt;</div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;啪唧&lt;/button&gt;</div><div class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction() &#123;</div><div class="line">var x;</div><div class="line">var d=new Date().getDay();</div><div class="line">switch (d)&#123;</div><div class="line">case 0:</div><div class="line">x=&quot;今天是周日&quot;;</div><div class="line">break;</div><div class="line">case 1:</div><div class="line">x=&quot;今天是周一&quot;;</div><div class="line">break;</div><div class="line">case 2:</div><div class="line">x=&quot;今天是周二&quot;;</div><div class="line">break;</div><div class="line">case 3:</div><div class="line">x=&quot;今天是周三&quot;;</div><div class="line">break;</div><div class="line">case 4:</div><div class="line">x=&quot;今天是周四&quot;;</div><div class="line">break;</div><div class="line">case 5:</div><div class="line">x=&quot;今天是周五&quot;;</div><div class="line">break;</div><div class="line">case 6:</div><div class="line">x=&quot;今天是周六&quot;;</div><div class="line">break;</div><div class="line">&#125;</div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML=x;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>2、学习使用break<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;p&gt;点击一下&lt;/p&gt;</div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;啪唧&lt;/button&gt;</div><div class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction() &#123;</div><div class="line">var x=&quot; &quot;,i=0;</div><div class="line">for(i=0;i&lt;10;i++)&#123;</div><div class="line">if(i==3)</div><div class="line">&#123;</div><div class="line">break;</div><div class="line">&#125;</div><div class="line">x=x+&quot;数字是&quot;+i+&quot;&lt;br/&gt;&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML=x;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>学习使用continue:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;p&gt;点击一下&lt;/p&gt;</div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;啪唧&lt;/button&gt;</div><div class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction() &#123;</div><div class="line">var x=&quot; &quot;,i=0;</div><div class="line">for(i=0;i&lt;10;i++)&#123;</div><div class="line">if(i==3)</div><div class="line">&#123;</div><div class="line">continue;</div><div class="line">&#125;</div><div class="line">x=x+&quot;数字是&quot;+i+&quot;&lt;br/&gt;&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML=x;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>4、通过标签的使用，break可以跳出任何一个代码块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">cars=[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];</div><div class="line">list:</div><div class="line">&#123;</div><div class="line">document.write(cars[0]+&quot;&lt;br/&gt;&quot;);</div><div class="line">document.write(cars[1]+&quot;&lt;br/&gt;&quot;);</div><div class="line">break list;</div><div class="line">document.write(cars[2]+&quot;&lt;br/&gt;&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2016/03/16/JS对象2/">
+                JS对象2
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-03-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JS简览/">JS简览</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>1、创建对象的几种方法（见笔记本）<br>第三种：用构造函数的方法。<br>向其中插入函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function person(firstname,lastname,age) &#123;</div><div class="line">this.firstname=firstname;</div><div class="line">this.lastname=lastname;</div><div class="line">this.age=age;</div><div class="line">this.changname=changName;</div><div class="line">function changName(name) &#123;</div><div class="line">this.lastname=name;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">myMother=new person(&quot;ha&quot;,&quot;haha&quot;,21);</div><div class="line">myMother.changname(&quot;like&quot;);</div><div class="line">document.write(myMother.lastname);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>2、遍历对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;p&gt;点击一下！&lt;/p&gt;</div><div class="line">&lt;button onclick=&quot;myFunction()&quot;&gt;啪唧&lt;/button&gt;</div><div class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction() &#123;</div><div class="line">var x;</div><div class="line">var txt=&quot; &quot;;</div><div class="line">var person=&#123;fnme:&quot;Bill&quot;,lname:&quot;Gates&quot;,age:56&#125;;</div><div class="line">for(x in person)</div><div class="line">&#123;</div><div class="line">txt=txt+person[x];</div><div class="line">&#125;</div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML=txt;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div></pre></td></tr></table></figure></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2016/03/15/JS简介/">
+                JS简介
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-03-15</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JS简览/">JS简览</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>1、可以对事件作出反应，例如button<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;h1&gt;我的第一段javascript&lt;/h1&gt;</div><div class="line">&lt;p&gt;</div><div class="line">javascript能够对事件作出反应。比如对按钮的点击：</div><div class="line">&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;alert(&apos;welcome&apos;)&quot;&gt;点击这里&lt;/button&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>onclick并不常用，但用于代码测试很方便。</p>
+<p>2、改变HTML的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;h1&gt;我的第一段javascript&lt;/h1&gt;</div><div class="line">&lt;p id=&quot;demo&quot;&gt;JS可以改变HTML元素的内容&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">function myFunction() &#123;</div><div class="line">x=document.getElementById(&quot;demo&quot;);//找到元素 这是DOM中的知识。</div><div class="line">x.innerHTML=&quot;hello javascript!&quot;;//作出修改</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;点击这里&lt;/button&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>3、改变HTML的图像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function changeImage() &#123;</div><div class="line">element=document.getElementById(&apos;myimage&apos;)</div><div class="line">if(element.src.match(&quot;bulbon&quot;))&#123;</div><div class="line">element.src=&quot;/i/eg_bulboff.gif&quot;;</div><div class="line">&#125;</div><div class="line">else&#123;</div><div class="line">element.src=&quot;/i/eg_bulbon.gif&quot;;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;img id=&quot;myimage&quot; onclick=&quot;changeImage()&quot;</div><div class="line">src=&quot;/i/eg_bulboff.gif&quot;&gt;</div><div class="line">&lt;p&gt;点击这盏灯&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>4、可以改变样式／例如颜色<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;h1&gt;hello&lt;/h1&gt;</div><div class="line">&lt;p id=&quot;demo&quot;&gt;JS可以改变元素样式&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction() &#123;</div><div class="line">x=document.getElementById(&quot;demo&quot;);//找到元素</div><div class="line">x.style.color=&quot;#ff8888&quot;;//改变颜色</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;点击这里&lt;/button&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>5、用于验证输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;h1&gt;请输入数字&lt;/h1&gt;</div><div class="line">&lt;input id=&quot;demo&quot; type=&quot;text&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction() &#123;</div><div class="line">var x = document.getElementById(&quot;demo&quot;).value;</div><div class="line">if (x == &quot;&quot; || isNaN(x)) &#123;</div><div class="line">alert(&quot;不是数字&quot;);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;点击这里&lt;/button&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/3/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="disabled" href="/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    “scut－刘璇，在校大学生。wechat：tlwm1122，欢迎技术交流和指导😊”
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2017/02/15/tab标题栏/">tab标题栏</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2017/02/15/网页基础布局/">网页基础布局</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2017/01/02/卡片模式的切换/">卡片模式的切换</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/12/15/java学习路线/">java前端路线</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/DOM浅涉/">DOM浅涉</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/方向总结/">方向总结</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/前端小窥/">前端小窥</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/jQuery初探/">jQuery初探</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

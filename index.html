@@ -419,11 +419,153 @@
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2016/04/04/DOM导航/">
+                DOM事件
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-04-04</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/DOM浅涉/">DOM浅涉</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>DOM列表是个好东西。<br>通过下标号，可以选取节点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body &gt;</div><div class="line">&lt;p&gt;这是第一句话&lt;/p&gt;</div><div class="line">&lt;p&gt;这是第二句话&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">x=document.getElementsByTagName(&quot;p&quot;);</div><div class="line">document.write(&quot;第二句话是：&quot;+x[1].innerHTML);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>通过利用列表长度来遍历元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body &gt;</div><div class="line">&lt;p&gt;这是第一句话&lt;/p&gt;</div><div class="line">&lt;p&gt;这是第二句话&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">x=document.getElementsByTagName(&quot;p&quot;);</div><div class="line">for(var i=0;i&lt;x.length;i++)&#123;</div><div class="line"></div><div class="line">document.write(x[i].innerHTML+&quot;&lt;br/&gt;&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>用first child来输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body &gt;</div><div class="line">&lt;p id=&quot;intro&quot;&gt;哈哈哈哈&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var x=document.getElementById(&quot;intro&quot;)</div><div class="line">document.write(x.firstChild.nodeValue)</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>有两个特殊的属性，可以访问全部的文档。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body &gt;</div><div class="line">&lt;p&gt;哈哈哈哈&lt;/p&gt;</div><div class="line">&lt;div&gt;</div><div class="line">&lt;p&gt;啦啦啦&lt;/p&gt;</div><div class="line">&lt;p&gt;嗯哼&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">alert(document.body.innerHTML);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div></pre></td></tr></table></figure></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2016/04/03/DOM事件/">
+                DOM事件
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-04-03</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/DOM浅涉/">DOM浅涉</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>onload 和on unload:当用户进入或离开页面会出发。<br>onload时间可用于检查访客的浏览器类型和版本，一边基于这些信息来加载不同的版本的网页。<br>unload和on unload用来处理cookies。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body &gt;</div><div class="line">&lt;div</div><div class="line">onmouseover=&quot;mOver(this)&quot;</div><div class="line">onmouseout=&quot;mOut(this)&quot;</div><div class="line">style=&quot;background-color:snow;width: 200px;height: 50px;padding-top: 25px;text-align: center;&quot;&gt;</div><div class="line">Mouse Over Me</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">function mOver(obj)&#123;</div><div class="line"></div><div class="line">obj.innerHTML=&quot;大傻子！&quot;</div><div class="line">&#125;</div><div class="line">function mOut(obj) &#123;</div><div class="line">obj.innerHTML=&quot;移上来有惊喜～&quot;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2016/04/02/DOM简介/">
+                DOM简介
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-04-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/DOM浅涉/">DOM浅涉</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>DOM是一个标准，分为三部分：核心 DOM、XML DOM、HTML DOM；</p>
+<p>HTML DOM定义了所有HTML元素的对象和属性，以及访问他们的方法。是如何获取、添加、修改、删除HTML元素的标准。</p>
+<p>如何用DOM创建一个新的元素：<br>1、将创建的元素加到某个节点后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;</div><div class="line">&lt;p id=&quot;p1&quot;&gt;this is a paragraph&lt;/p&gt;;</div><div class="line">&lt;p id=&quot;p2&quot;&gt;this is 2&lt;/p&gt;;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var para=document.createElement(&quot;p&quot;);</div><div class="line">var node=document.createTextNode(&quot;this is 3&quot;);</div><div class="line">para.appendChild(node);</div><div class="line">var element = document.getElementById(&quot;div1&quot;);</div><div class="line">element.appendChild(para);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>2、直接将创建的元素插入某个节点前：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;</div><div class="line">&lt;p id=&quot;p1&quot;&gt;this is a paragraph&lt;/p&gt;;</div><div class="line">&lt;p id=&quot;p2&quot;&gt;this is 2&lt;/p&gt;;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var para=document.createElement(&quot;p&quot;);</div><div class="line">var node=document.createTextNode(&quot;this is 3&quot;);</div><div class="line">para.appendChild(node);</div><div class="line">var element = document.getElementById(&quot;div1&quot;);</div><div class="line">var child=document.getElementById(&quot;p1&quot;);</div><div class="line">element.insertBefore(para,child);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>3、删除已有的元素:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;</div><div class="line">&lt;p id=&quot;p1&quot;&gt;this is a paragraph&lt;/p&gt;;</div><div class="line">&lt;p id=&quot;p2&quot;&gt;this is 2&lt;/p&gt;;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var parent=document.getElementById(&quot;div1&quot;);</div><div class="line">var child=document.getElementById(&quot;p1&quot;);</div><div class="line">parent.removeChild(child);</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2016/03/30/JQchaning/">
+                JQchaning
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-03-30</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/jQuery初探/">jQuery初探</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;script src=&quot;https://code.jquery.com/jquery-3.1.1.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;hellolike.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body &gt;</div><div class="line">&lt;p id=&quot;p1&quot;&gt;开心的我要飞走啦!&lt;/p&gt;</div><div class="line">&lt;button&gt;刘宝宝&lt;/button&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">js:</div><div class="line">$(document).ready(function () &#123;</div><div class="line">$(&quot;button&quot;).click(function () &#123;</div><div class="line">$(&quot;#p1&quot;).css(&quot;color&quot;,&quot;red&quot;).slideUp(2000).slideDown(2000);</div><div class="line">&#125;</div><div class="line">)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
 
 
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="disabled" href="/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/2/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -474,11 +616,19 @@
     <ul>
         
         <li>
+            <a class="footer-post" href="/categories/DOM浅涉/">DOM浅涉</a>
+        </li>
+        
+        <li>
             <a class="footer-post" href="/categories/方向总结/">方向总结</a>
         </li>
         
         <li>
             <a class="footer-post" href="/categories/前端小窥/">前端小窥</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/jQuery初探/">jQuery初探</a>
         </li>
         
     </ul>
