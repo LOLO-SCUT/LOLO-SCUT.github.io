@@ -93,13 +93,13 @@
             
             <li class="menu-item">
                 <a href="/about.html">
-                    刘咯咯
+                    关于我（暂无）
                 </a>
             </li>
             
             <li class="menu-item">
                 <a href="/contact.html">
-                    联系我
+                    联系我（暂无）
                 </a>
             </li>
             
@@ -387,6 +387,37 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2016/03/16/JS对象/">
+                JS对象
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-03-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JS简览/">JS简览</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>所有的事物都是对象：字符串，数字，数组，时间等。<br>对象是拥有属性和方法的数据<br>创建对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">person =new Object();</div><div class="line">person.firstname=&quot;bill&quot;;</div><div class="line">person.lastname=&quot;gates&quot;;</div><div class="line">person.age=56;</div><div class="line">person.eyecolor=&quot;bule&quot;;</div><div class="line">document.write(person.firstname+&quot; is &quot;+person.age+&quot; years old.&quot;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div></pre></td></tr></table></figure><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">person =new Object();</div><div class="line">person.firstname=&quot;bill&quot;;</div><div class="line">person.lastname=&quot;gates&quot;;</div><div class="line">person.age=56;</div><div class="line">person.eyecolor=&quot;bule&quot;;</div><div class="line">var x=person.firstname.toUpperCase();</div><div class="line">document.write(x+&quot;&lt;br/&gt;”);//访问对象方法，把它变成大写字母。</div><div class="line">document.write(person.firstname+&quot; is &quot;+person.age+&quot; years old.&quot;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2016/03/16/JS使用/">
                 JS使用
             </a>
@@ -407,37 +438,6 @@
     
         <div class="content">
             <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction() &#123;</div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML=&quot;我最爱爸爸啦!&quot;;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;我爱爸爸&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;p id=&quot;demo&quot;&gt;哼唧&lt;/p&gt;</div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;亲亲我&lt;/button&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2016/03/16/JS对象2/">
-                JS对象2
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2016-03-16</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/JS简览/">JS简览</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>1、创建对象的几种方法（见笔记本）<br>第三种：用构造函数的方法。<br>向其中插入函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function person(firstname,lastname,age) &#123;</div><div class="line">this.firstname=firstname;</div><div class="line">this.lastname=lastname;</div><div class="line">this.age=age;</div><div class="line">this.changname=changName;</div><div class="line">function changName(name) &#123;</div><div class="line">this.lastname=name;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">myMother=new person(&quot;ha&quot;,&quot;haha&quot;,21);</div><div class="line">myMother.changname(&quot;like&quot;);</div><div class="line">document.write(myMother.lastname);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>2、遍历对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;p&gt;点击一下！&lt;/p&gt;</div><div class="line">&lt;button onclick=&quot;myFunction()&quot;&gt;啪唧&lt;/button&gt;</div><div class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction() &#123;</div><div class="line">var x;</div><div class="line">var txt=&quot; &quot;;</div><div class="line">var person=&#123;fnme:&quot;Bill&quot;,lname:&quot;Gates&quot;,age:56&#125;;</div><div class="line">for(x in person)</div><div class="line">&#123;</div><div class="line">txt=txt+person[x];</div><div class="line">&#125;</div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML=txt;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div></pre></td></tr></table></figure></p>
-
         </div>
     
 
@@ -476,7 +476,7 @@
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
                 <h2>About</h2>
                 <p>
-                    “scut－刘璇，在校大学生。blog代码全手打，经验之谈借鉴了各方大家！wechat：tlwm1122，欢迎技术交流和指导😊”
+                    “scut－刘璇，在校大学生。wechat：tlwm1122，欢迎技术交流和指导😊”
                 </p>
             </div>
             
