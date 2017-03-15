@@ -135,50 +135,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2017/03/15/tab标题栏/">
-                tab标题栏
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2017-03-15</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>/*<br>&lt;!DOCTYPE html&gt;</p>
-<html><br><head><br><meta charset="utf-8"><br><title>hello刘宝宝</title><br><script type="text/javascript" src="hellolike.js"><br><br></script><br><style><br>*{<br>margin:0;<br>padding:0;<br>list-style: none;<br>font-size: 12px;<br>}<br>.notice{<br>width:298px;<br>height: 98px;<br>margin: 10px;<br>border:1px solid #eee;<br>overflow: hidden;<br>}<br>.notice-tit{<br>height:27px;<br>position: relative;<br>background-color: #f7f7f7;<br>}<br>.notice-tit ul{<br>position: absolute;<br>width:301px;<br>left:-1px;<br>}<br>.notice-tit li{<br>float: left;<br>width:58px;<br>height: 26px;<br>line-height: 26px;<br>text-align: center;<br>overflow: hidden;<br>background-color: #ffffff;<br>padding:0 1px;<br>border-bottom: 1px solid #eee;<br><br>}<br>.notice-tit li.select{<br>background-color: #ffffff;<br>border-bottom-color: #ffffff;<br>border-left: 1px solid #eee;<br>border-right:1px solid #eee;<br>padding:0;<br>font-weight: bold;<br>}<br>.notice li a:link,.notice-tit li a:visited{<br>text-decoration: none;<br>color: #000;<br><br>}<br>.notice a:hover{color: #f90;}<br>.notice-con .mod{margin: 10px 6px ;}<br>.notice-con .mod ul li{<br>float: left;<br>width: 143px;<br>height: 25px;<br>overflow: hidden;}<br></style><br></head><br><br><body><br><br><div id="notice" class="notice"><br><br><div id="notice-tit" class="notice-tit"><br><ul><br><li><br><a herf="#">优秀人物</a><br></li><br><li><br><a herf="#">重要事件</a><br></li><br><li><br><a herf="#">论坛</a><br></li><br><li><br><a herf="#">安全</a><br></li><br><li><br><a herf="#">公益</a><br></li><br><br></ul><br></div><br><div id="notice-con" class="notice-con"><br><div class="mod" style="display: none;"><br><ul><br><li><br><a herf="#">刘咯咯：要快乐学习呀</a><br></li><br><li><br><a herf="#">刘咯咯：哼唧</a><br></li><br><li><br><a herf="#">刘咯咯：今天吃滑蛋饭</a><br></li><br><li><br><a herf="#">刘宝宝：我爱我爸爸</a><br></li><br><br><br></ul><br></div><br><br><div class="mod" style="display: none;"><br><ul><br><li><br><span>[<br><a herf="#">重要</a><br>]</span><br><a herf="#">天哪！厉害啦我的璇！</a><br></li><br><li><br><span>[<br><a herf="#">通知</a><br>]</span><br><a herf="#">学习宝宝党领导人讲话</a><br></li><br></ul><br></div><br><br><div class="mod" style="display: none;"><br><ul><br><li><br><span>[<br><a herf="#">聚焦</a><br>]</span><br><a herf="#">可爱宝宝写真</a><br></li><br><li><br><span>[<br><a herf="#">小道消息</a><br>]</span><br><a herf="#">刘宝宝成长记录</a><br></li><br></ul><br></div><br><div class="mod" style="display: none;"><br><ul><br><li><br><span>[<br><a herf="#">珍稀物种</a><br>]</span><br><a herf="#">保护宝宝</a><br></li><br><li><br><span>[<br><a herf="#">喂好吃的</a><br>]</span><br><a herf="#">谢谢</a><br></li><br></ul><br></div><br><div class="mod" style="display: none;"><br><ul><br><li><br><span>[<br><a herf="#">捐款</a><br>]</span><br><a herf="#">为刘宝宝助力！</a><br></li><br><li><br><span>[<br><a herf="#">基金会</a><br>]</span><br><a herf="#">刘咯咯成长基金会</a><br></li><br></ul><br></div><br><br></div><br></div><br><br></body><br></html>
-
-
-<p>js文件：</p>
-<p>function $(id) {<br>return typeof id===’string’?document.getElementById(id):id;<br>}<br>window.onload=function () {<br>//获取鼠标滑过或点击的标签和要切换的内容<br>//划过的<br>var titles=$(‘notice-tit’).getElementsByTagName(“li”);<br>divs=$(‘notice-con’).getElementsByTagName(‘div’);<br>if(titles.length!=divs.length)<br>return;<br>//遍历所有li<br>for(var i=0;i&lt;titles.length;i++){<br>//添加索引<br>titles[i].num=i;</p>
-<p>titles[i].onmouseover=function () {<br>//清除所有高亮<br>for(var j=0;j&lt;titles.length;j++){<br>titles[j].className=’’;<br>divs[j].style.display=”none”;<br>}<br>this.className=”select”;<br>divs[this.num].style.display=’block’;<br>}<br>}<br>}</p>
-<p>增加延迟：js文件：</p>
-<p>function $(id) {<br>return typeof id===’string’?document.getElementById(id):id;<br>}<br>window.onload=function () {<br>var index=0;//用它表示滑过标签的索引<br>var timer=null;</p>
-<p>var lis=$(“notice-tit”).getElementsByTagName(“li”);<br>var divs=$(“notice-con”).getElementsByTagName(“div”);<br>if(lis.length!=divs.length) return;</p>
-<p>for(var i=0;i&lt;lis.length;i++) {<br>//添加索引<br>lis[i].num = i;<br>lis[i].onmouseover=function () {<br>//在这里this指的还是li!<br>var that=this;//用that来引用当前划过的li<br>//先清除定时器,只保留当前停留时间大于500ms才会保留<br>if(timer){<br>clearTimeout(timer);<br>timer=null;<br>}</p>
-<p>//定时器<br>timer=setTimeout(function () {<br>for(var j=0;j&lt;lis.length;j++){<br>lis[j].className=’’;<br>divs[j].style.display=”none”;<br>}<br>//这时候的this是window！DOM<br>lis[that.num].className=”select”;<br>divs[that.num].style.display=”block”;<br>},500);//0.5s后开始执行</p>
-<p>}<br>}</p>
-<p>}<br>自动切换：js代码部分：</p>
-<p>function $(id) {<br>return typeof id===’string’?document.getElementById(id):id;<br>}<br>window.onload=tab;<br>function tab() {<br>//当前高亮的页签索引<br>var index=0;//希望一进来就是第一张卡片高亮<br>var timer=null;<br>var lis=$(“notice-tit”).getElementsByTagName(“li”);<br>var divs=$(“notice-con”).getElementsByTagName(“div”);<br>//添加定时器，改变索引<br>timer=setInterval(function () {<br>index++;<br>if(index&gt;=lis.length){<br>index=0;<br>}<br>for(var j=0;j&lt;lis.length;j++){<br>lis[j].className=’’;<br>divs[j].style.display=”none”;<br>}<br>//高亮显示当前页签<br>lis[index].className=”select”;<br>divs[index].style.display=”block”<br>},2000)//2s一换<br>}</p>
-<p>自动播放＋手动滑</p>
-<p>function $(id) {<br>return typeof id===’string’?document.getElementById(id):id;<br>}<br>window.onload=tab;<br>function tab() {<br>//当前高亮的页签索引<br>var index=0;//希望一进来就是第一张卡片高亮<br>var timer=null;<br>var lis=$(“notice-tit”).getElementsByTagName(“li”);<br>var divs=$(“notice-con”).getElementsByTagName(“div”);<br>//遍历每个页签，并给他们绑定时间<br>for(var i=0;i<lis.length;i++){ lis[i].num="i;" lis[i].onmouseover="function" ()="" {="" clearinterval(timer);="" changeoption(this.num);="" }="" lis[i].onmouseout="function" index="this.num;" timer="setInterval(autoplay,2000);" if(timer){="" 添加定时器，改变索引="" 封装函数="" function="" autoplay()="" index++;="" if(index="">=lis.length){<br>index=0;<br>}<br>changeOption(index);<br>}</lis.length;i++){></p>
-<p>function changeOption(curindex) {<br>for(var j=0;j&lt;lis.length;j++){<br>lis[j].className=’’;<br>divs[j].style.display=”none”;<br>}<br>//高亮显示当前页签<br>lis[curindex].className=”select”;<br>divs[curindex].style.display=”block”<br>}<br>}<br>*/</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/2017/03/15/卡片模式的切换/">
                 卡片模式的切换
             </a>
@@ -311,6 +267,50 @@ imgs[i].parentNode.className = "a-img";
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2017/02/15/tab标题栏/">
+                tab标题栏
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-02-15</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>&lt;!DOCTYPE html&gt;</p>
+<html><br><head><br><meta charset="utf-8"><br><title>hello刘宝宝</title><br><script type="text/javascript" src="hellolike.js"><br><br></script><br><style><br>*{<br>margin:0;<br>padding:0;<br>list-style: none;<br>font-size: 12px;<br>}<br>.notice{<br>width:298px;<br>height: 98px;<br>margin: 10px;<br>border:1px solid #eee;<br>overflow: hidden;<br>}<br>.notice-tit{<br>height:27px;<br>position: relative;<br>background-color: #f7f7f7;<br>}<br>.notice-tit ul{<br>position: absolute;<br>width:301px;<br>left:-1px;<br>}<br>.notice-tit li{<br>float: left;<br>width:58px;<br>height: 26px;<br>line-height: 26px;<br>text-align: center;<br>overflow: hidden;<br>background-color: #ffffff;<br>padding:0 1px;<br>border-bottom: 1px solid #eee;<br><br>}<br>.notice-tit li.select{<br>background-color: #ffffff;<br>border-bottom-color: #ffffff;<br>border-left: 1px solid #eee;<br>border-right:1px solid #eee;<br>padding:0;<br>font-weight: bold;<br>}<br>.notice li a:link,.notice-tit li a:visited{<br>text-decoration: none;<br>color: #000;<br><br>}<br>.notice a:hover{color: #f90;}<br>.notice-con .mod{margin: 10px 6px ;}<br>.notice-con .mod ul li{<br>float: left;<br>width: 143px;<br>height: 25px;<br>overflow: hidden;}<br></style><br></head><br><br><body><br><br><div id="notice" class="notice"><br><br><div id="notice-tit" class="notice-tit"><br><ul><br><li><br><a herf="#">优秀人物</a><br></li><br><li><br><a herf="#">重要事件</a><br></li><br><li><br><a herf="#">论坛</a><br></li><br><li><br><a herf="#">安全</a><br></li><br><li><br><a herf="#">公益</a><br></li><br><br></ul><br></div><br><div id="notice-con" class="notice-con"><br><div class="mod" style="display: none;"><br><ul><br><li><br><a herf="#">刘咯咯：要快乐学习呀</a><br></li><br><li><br><a herf="#">刘咯咯：哼唧</a><br></li><br><li><br><a herf="#">刘咯咯：今天吃滑蛋饭</a><br></li><br><li><br><a herf="#">刘宝宝：我爱我爸爸</a><br></li><br><br><br></ul><br></div><br><br><div class="mod" style="display: none;"><br><ul><br><li><br><span>[<br><a herf="#">重要</a><br>]</span><br><a herf="#">天哪！厉害啦我的璇！</a><br></li><br><li><br><span>[<br><a herf="#">通知</a><br>]</span><br><a herf="#">学习宝宝党领导人讲话</a><br></li><br></ul><br></div><br><br><div class="mod" style="display: none;"><br><ul><br><li><br><span>[<br><a herf="#">聚焦</a><br>]</span><br><a herf="#">可爱宝宝写真</a><br></li><br><li><br><span>[<br><a herf="#">小道消息</a><br>]</span><br><a herf="#">刘宝宝成长记录</a><br></li><br></ul><br></div><br><div class="mod" style="display: none;"><br><ul><br><li><br><span>[<br><a herf="#">珍稀物种</a><br>]</span><br><a herf="#">保护宝宝</a><br></li><br><li><br><span>[<br><a herf="#">喂好吃的</a><br>]</span><br><a herf="#">谢谢</a><br></li><br></ul><br></div><br><div class="mod" style="display: none;"><br><ul><br><li><br><span>[<br><a herf="#">捐款</a><br>]</span><br><a herf="#">为刘宝宝助力！</a><br></li><br><li><br><span>[<br><a herf="#">基金会</a><br>]</span><br><a herf="#">刘咯咯成长基金会</a><br></li><br></ul><br></div><br><br></div><br></div><br><br></body><br></html>
+
+
+<p>js文件：</p>
+<p>function $(id) {<br>return typeof id===’string’?document.getElementById(id):id;<br>}<br>window.onload=function () {<br>//获取鼠标滑过或点击的标签和要切换的内容<br>//划过的<br>var titles=$(‘notice-tit’).getElementsByTagName(“li”);<br>divs=$(‘notice-con’).getElementsByTagName(‘div’);<br>if(titles.length!=divs.length)<br>return;<br>//遍历所有li<br>for(var i=0;i&lt;titles.length;i++){<br>//添加索引<br>titles[i].num=i;</p>
+<p>titles[i].onmouseover=function () {<br>//清除所有高亮<br>for(var j=0;j&lt;titles.length;j++){<br>titles[j].className=’’;<br>divs[j].style.display=”none”;<br>}<br>this.className=”select”;<br>divs[this.num].style.display=’block’;<br>}<br>}<br>}</p>
+<p>增加延迟：js文件：</p>
+<p>function $(id) {<br>return typeof id===’string’?document.getElementById(id):id;<br>}<br>window.onload=function () {<br>var index=0;//用它表示滑过标签的索引<br>var timer=null;</p>
+<p>var lis=$(“notice-tit”).getElementsByTagName(“li”);<br>var divs=$(“notice-con”).getElementsByTagName(“div”);<br>if(lis.length!=divs.length) return;</p>
+<p>for(var i=0;i&lt;lis.length;i++) {<br>//添加索引<br>lis[i].num = i;<br>lis[i].onmouseover=function () {<br>//在这里this指的还是li!<br>var that=this;//用that来引用当前划过的li<br>//先清除定时器,只保留当前停留时间大于500ms才会保留<br>if(timer){<br>clearTimeout(timer);<br>timer=null;<br>}</p>
+<p>//定时器<br>timer=setTimeout(function () {<br>for(var j=0;j&lt;lis.length;j++){<br>lis[j].className=’’;<br>divs[j].style.display=”none”;<br>}<br>//这时候的this是window！DOM<br>lis[that.num].className=”select”;<br>divs[that.num].style.display=”block”;<br>},500);//0.5s后开始执行</p>
+<p>}<br>}</p>
+<p>}<br>自动切换：js代码部分：</p>
+<p>function $(id) {<br>return typeof id===’string’?document.getElementById(id):id;<br>}<br>window.onload=tab;<br>function tab() {<br>//当前高亮的页签索引<br>var index=0;//希望一进来就是第一张卡片高亮<br>var timer=null;<br>var lis=$(“notice-tit”).getElementsByTagName(“li”);<br>var divs=$(“notice-con”).getElementsByTagName(“div”);<br>//添加定时器，改变索引<br>timer=setInterval(function () {<br>index++;<br>if(index&gt;=lis.length){<br>index=0;<br>}<br>for(var j=0;j&lt;lis.length;j++){<br>lis[j].className=’’;<br>divs[j].style.display=”none”;<br>}<br>//高亮显示当前页签<br>lis[index].className=”select”;<br>divs[index].style.display=”block”<br>},2000)//2s一换<br>}</p>
+<p>自动播放＋手动滑</p>
+<p>function $(id) {<br>return typeof id===’string’?document.getElementById(id):id;<br>}<br>window.onload=tab;<br>function tab() {<br>//当前高亮的页签索引<br>var index=0;//希望一进来就是第一张卡片高亮<br>var timer=null;<br>var lis=$(“notice-tit”).getElementsByTagName(“li”);<br>var divs=$(“notice-con”).getElementsByTagName(“div”);<br>//遍历每个页签，并给他们绑定时间<br>for(var i=0;i<lis.length;i++){ lis[i].num="i;" lis[i].onmouseover="function" ()="" {="" clearinterval(timer);="" changeoption(this.num);="" }="" lis[i].onmouseout="function" index="this.num;" timer="setInterval(autoplay,2000);" if(timer){="" 添加定时器，改变索引="" 封装函数="" function="" autoplay()="" index++;="" if(index="">=lis.length){<br>index=0;<br>}<br>changeOption(index);<br>}</lis.length;i++){></p>
+<p>function changeOption(curindex) {<br>for(var j=0;j&lt;lis.length;j++){<br>lis[j].className=’’;<br>divs[j].style.display=”none”;<br>}<br>//高亮显示当前页签<br>lis[curindex].className=”select”;<br>divs[curindex].style.display=”block”<br>}<br>}<br>*/</p>
+
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
@@ -340,10 +340,6 @@ imgs[i].parentNode.className = "a-img";
         <ul>
             
             <li>
-                <a class="footer-post" href="/2017/03/15/tab标题栏/">tab标题栏</a>
-            </li>
-            
-            <li>
                 <a class="footer-post" href="/2017/03/15/卡片模式的切换/">卡片模式的切换</a>
             </li>
             
@@ -353,6 +349,10 @@ imgs[i].parentNode.className = "a-img";
             
             <li>
                 <a class="footer-post" href="/2017/03/14/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2017/02/15/tab标题栏/">tab标题栏</a>
             </li>
             
         </ul>
