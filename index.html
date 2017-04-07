@@ -168,6 +168,43 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2017/02/26/setTimeout setInterval/">
+                setTimeout setInterval
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-02-26</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/细化解释/">细化解释</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>IE8-浏览器不允许向定时器中传递事件对象event，如果要使用事件对象中的某些属性，可以将其保存在变量中传递进去<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">div.onclick = function(e)&#123;</div><div class="line">e = e || event;</div><div class="line">var type = e.type;</div><div class="line">setTimeout(function()&#123;</div><div class="line">console.log(type);//click</div><div class="line">console.log(e.type);//报错</div><div class="line">&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>this指向</p>
+<p>　　在this机制系列已经详细介绍过this指向的4种绑定规则，由于定时器中的this存在隐式丢失的情况，且极易出错，因此在这里再次进行说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var a = 0; function foo()&#123;     console.log(this.a); &#125;; var obj = &#123;     a : 2,     foo:foo &#125; setTimeout(obj.foo,100);//0</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">//等价于 var a = 0; setTimeout(function foo()&#123;     console.log(this.a); &#125;,100);//0</div></pre></td></tr></table></figure>
+<p>　若想获得obj对象中的a属性值，可以将obj.foo函数放置在定时器中的匿名函数中进行隐式绑定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var a = 0;</div><div class="line">function foo()&#123;</div><div class="line">console.log(this.a);</div><div class="line">&#125;;</div><div class="line">var obj = &#123;</div><div class="line">a : 2,</div><div class="line">foo:foo</div><div class="line">&#125;</div><div class="line">setTimeout(function()&#123;</div><div class="line">obj.foo();</div><div class="line">&#125;,100);//2</div><div class="line"></div></pre></td></tr></table></figure>
+<p>　或者也可以使用bind方法将foo()方法的this绑定到obj上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var a = 0; function foo()&#123;     console.log(this.a); &#125;; var obj = &#123;     a : 2,     foo:foo &#125; setTimeout(obj.foo.bind(obj),100);//2</div></pre></td></tr></table></figure></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2017/02/15/tab标题栏/">
                 tab标题栏
             </a>
@@ -517,39 +554,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2016/04/02/DOM简介/">
-                DOM简介
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2016-04-02</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/DOM浅涉/">DOM浅涉</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>DOM是一个标准，分为三部分：核心 DOM、XML DOM、HTML DOM；</p>
-<p>HTML DOM定义了所有HTML元素的对象和属性，以及访问他们的方法。是如何获取、添加、修改、删除HTML元素的标准。</p>
-<p>如何用DOM创建一个新的元素：<br>1、将创建的元素加到某个节点后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;</div><div class="line">&lt;p id=&quot;p1&quot;&gt;this is a paragraph&lt;/p&gt;;</div><div class="line">&lt;p id=&quot;p2&quot;&gt;this is 2&lt;/p&gt;;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var para=document.createElement(&quot;p&quot;);</div><div class="line">var node=document.createTextNode(&quot;this is 3&quot;);</div><div class="line">para.appendChild(node);</div><div class="line">var element = document.getElementById(&quot;div1&quot;);</div><div class="line">element.appendChild(para);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>2、直接将创建的元素插入某个节点前：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;</div><div class="line">&lt;p id=&quot;p1&quot;&gt;this is a paragraph&lt;/p&gt;;</div><div class="line">&lt;p id=&quot;p2&quot;&gt;this is 2&lt;/p&gt;;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var para=document.createElement(&quot;p&quot;);</div><div class="line">var node=document.createTextNode(&quot;this is 3&quot;);</div><div class="line">para.appendChild(node);</div><div class="line">var element = document.getElementById(&quot;div1&quot;);</div><div class="line">var child=document.getElementById(&quot;p1&quot;);</div><div class="line">element.insertBefore(para,child);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>3、删除已有的元素:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;刘宝宝hello&lt;/title&gt;</div><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;</div><div class="line">&lt;p id=&quot;p1&quot;&gt;this is a paragraph&lt;/p&gt;;</div><div class="line">&lt;p id=&quot;p2&quot;&gt;this is 2&lt;/p&gt;;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var parent=document.getElementById(&quot;div1&quot;);</div><div class="line">var child=document.getElementById(&quot;p1&quot;);</div><div class="line">parent.removeChild(child);</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -596,15 +600,15 @@
             </li>
             
             <li>
+                <a class="footer-post" href="/2017/02/26/setTimeout setInterval/">setTimeout setInterval</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2017/02/15/tab标题栏/">tab标题栏</a>
             </li>
             
             <li>
                 <a class="footer-post" href="/2017/02/15/网页基础布局/">网页基础布局</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2017/01/02/卡片模式的切换/">卡片模式的切换</a>
             </li>
             
         </ul>
@@ -618,6 +622,10 @@
     <ul>
         
         <li>
+            <a class="footer-post" href="/categories/细化解释/">细化解释</a>
+        </li>
+        
+        <li>
             <a class="footer-post" href="/categories/DOM浅涉/">DOM浅涉</a>
         </li>
         
@@ -627,10 +635,6 @@
         
         <li>
             <a class="footer-post" href="/categories/前端小窥/">前端小窥</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/jQuery初探/">jQuery初探</a>
         </li>
         
     </ul>
